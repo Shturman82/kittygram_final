@@ -1,12 +1,15 @@
 # flake8: noqa
 import os
+import environ
 from pathlib import Path
+
+env = environ.Env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$'
+SECRET_KEY = os.getenv('MY_SECRET_KEY', ''),
 
-DEBUG = False
+DEBUG = env.bool('DJANGO_DEBUG', False)
 
 ALLOWED_HOSTS = ['84.201.163.191', '127.0.0.1', 'localhost', 'justmydomain.ru']
 
