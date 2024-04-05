@@ -7,9 +7,9 @@ env = environ.Env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('MY_SECRET_KEY', ''),
+SECRET_KEY = os.getenv('SECRET_KEY', ''),
 
-DEBUG = env.bool('DJANGO_DEBUG', False)
+DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
 ALLOWED_HOSTS = ['84.201.163.191', '127.0.0.1', 'localhost', 'justmydomain.ru']
 
