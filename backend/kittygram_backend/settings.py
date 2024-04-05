@@ -7,7 +7,7 @@ env = environ.Env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY', ''),
+SECRET_KEY = os.getenv('SECRET', ''),
 
 DEBUG = env.bool('DJANGO_DEBUG', default=False)
 
@@ -65,7 +65,7 @@ DATABASES = {
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),
         'HOST': os.getenv('DB_HOST', ''),
         'PORT': os.getenv('DB_PORT', 5432),
-        'SECRET_KEY': os.getenv('SECRET_KEY', '')
+        'SECRET_KEY': os.getenv('SECRET', '')
     }
 }
 
